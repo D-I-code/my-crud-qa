@@ -23,12 +23,6 @@ public class ApprenticeRepo {
         return dynamoDBMapper.load(Apprentice.class, apprenticeId);
     }
 
-    public String delete(String apprenticeId) {
-        Apprentice app = dynamoDBMapper.load(Apprentice.class, apprenticeId);
-        dynamoDBMapper.delete(app);
-        return "Apprentice Deleted.";
-    }
-
     public String update(String apprenticeId, Apprentice apprentice) {
         dynamoDBMapper.save(apprentice,
                 new DynamoDBSaveExpression()
@@ -37,5 +31,11 @@ public class ApprenticeRepo {
                                         new AttributeValue().withS(apprenticeId)
                                 )));
         return apprenticeId;
+    }
+
+    public String delete(String apprenticeId) {
+        Apprentice app = dynamoDBMapper.load(Apprentice.class, apprenticeId);
+        dynamoDBMapper.delete(app);
+        return "Apprentice Deleted.";
     }
 }

@@ -17,7 +17,7 @@ import java.util.Properties;
 public class DynamoDbConfiguration {
 
     @Bean
-    public DynamoDBMapper dunamoDBMapper() throws IOException {
+    public DynamoDBMapper dynamoDBMapper() throws IOException {
         return new DynamoDBMapper(buildAmazonDynamoDB());
     }
 
