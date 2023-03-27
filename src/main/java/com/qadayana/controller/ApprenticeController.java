@@ -11,7 +11,7 @@ public class ApprenticeController {
     @Autowired
     private ApprenticeRepo apprenticeRepository;
 
-    @PostMapping("/apprentice/{id}")
+    @PostMapping("/apprentice")
     public Apprentice saveApprentice(@RequestBody Apprentice apprentice) {
         return apprenticeRepository.save(apprentice);
     }
